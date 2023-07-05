@@ -2,22 +2,22 @@
     <div class="converter">
         <div class="converter-block">
             <div class="converter-currency">
-                <input placeholder="0" type="text" class="converter-currency__input">
-                <img src="assets/icons/dollar.png" alt="">
-                <select name="currency" id="">
-                    <option value="dollar">USD</option>
-                    <option value="dollar">EUR</option>
-                    <option value="dollar">UAH</option>
+                <input [(ngModel)]="inputTop" (input)="exchange('top')" placeholder="0" type="text" class="converter-currency__input">
+                <img src="{{currentFlags.top}}" alt="">
+                <select (change)="setFlag($event, 'top')" name="currency">
+                    <option value="uah">UAH</option>
+                    <option value="usd">USD</option>
+                    <option value="eur">EUR</option>
                 </select>
             </div>
             <img class="converter-img" src="assets/icons/back.png" alt="">
             <div class="converter-currency">
-                <input placeholder="0"  type="text" class="converter-currency__input">
-                <img src="assets/icons/euro.png" alt="">
-                <select name="currency" id="">
-                    <option value="dollar">EUR</option>
-                    <option value="dollar">USD</option>
-                    <option value="dollar">UAH</option>
+                <input [(ngModel)]="inputBottom" (input)="exchange('bottom')" placeholder="0"  type="text" class="converter-currency__input">
+                <img src="{{currentFlags.bottom}}" alt="">
+                <select (change)="setFlag($event, 'bottom')" name="currency">
+                    <option value="uah">USD</option>
+                    <option value="usd">UAH</option>
+                    <option value="eur">EUR</option>
                 </select>
             </div>
         </div>
